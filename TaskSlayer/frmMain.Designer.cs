@@ -40,7 +40,7 @@
             this.listProcesses.Location = new System.Drawing.Point(12, 12);
             this.listProcesses.Name = "listProcesses";
             this.listProcesses.ShowGroups = false;
-            this.listProcesses.Size = new System.Drawing.Size(349, 538);
+            this.listProcesses.Size = new System.Drawing.Size(499, 538);
             this.listProcesses.TabIndex = 0;
             this.listProcesses.UseCompatibleStateImageBehavior = false;
             this.listProcesses.View = System.Windows.Forms.View.Details;
@@ -48,7 +48,7 @@
             // btnKill
             // 
             this.btnKill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKill.Location = new System.Drawing.Point(250, 556);
+            this.btnKill.Location = new System.Drawing.Point(400, 556);
             this.btnKill.Name = "btnKill";
             this.btnKill.Size = new System.Drawing.Size(111, 39);
             this.btnKill.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 607);
+            this.ClientSize = new System.Drawing.Size(523, 607);
             this.Controls.Add(this.btnKill);
             this.Controls.Add(this.listProcesses);
             this.Name = "frmMain";
