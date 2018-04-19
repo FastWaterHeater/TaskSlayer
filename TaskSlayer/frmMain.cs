@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TaskSlayer
 {
@@ -19,7 +20,15 @@ namespace TaskSlayer
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            Process[] processes;
+            processes = Process.GetProcesses();
+            listProcesses.Columns.Add("Name",200);
+ 
+            foreach (Process proc in processes)
+            {
+                string[] row = { proc.ProcessName };
+                listProcesses.Items.Add(new ListViewItem(row));
+            }
         }
     }
 }
