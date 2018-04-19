@@ -22,13 +22,12 @@ namespace TaskSlayer
         {
             Process[] processes;
             processes = Process.GetProcesses();
-            listProcesses.Columns.Add("Name",200);
- 
+
             foreach (Process proc in processes)
             {
-                string[] row = { proc.ProcessName };
-                listProcesses.Items.Add(new ListViewItem(row));
+                listProcesses.AddObject(proc);
             }
         }
+
     }
 }
