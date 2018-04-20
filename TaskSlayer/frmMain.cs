@@ -25,9 +25,35 @@ namespace TaskSlayer
 
             foreach (Process proc in processes)
             {
-                listProcesses.AddObject(proc);
+                if (chkOnlyWithWindowName.Checked)
+                    if (proc.MainWindowTitle != "")
+                    {
+                        processEntry newProcEntry = new processEntry(proc);
+                        listProcesses.AddObject(newProcEntry);
+                    }
             }
         }
 
+        private void btnKill_Click(object sender, EventArgs e)
+        {
+            Process proc = ((processEntry)listProcesses.SelectedObject).proc;
+            proc.Kill();
+        }
+
+        private void listProcesses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+    class processEntry
+    {
+        public processEntry() { }
+        public processEntry(Process process) => proc = process;
+        public Process proc;
+
+        public int Id => proc.Id;
+        public long WorkingSetMB => ((proc.WorkingSet64 / 1024) / 1024);
+        public string ProcessName => proc.ProcessName;
+        public string MainWindowTitle => proc.MainWindowTitle;
     }
 }
